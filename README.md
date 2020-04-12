@@ -5,9 +5,9 @@ The Face Detection Web Service is called Restful and in the post method. The par
 ```
 {
   'hasError': bool, 
-  'StatusCode': int,
-  'StatusMessage': string, 
-  'Faces': 
+  'statusCode': int,
+  'statusMessage': string, 
+  'data': 
   [
     {
       'faceID': string, 
@@ -55,7 +55,7 @@ To install [requests](https://pypi.org/project/requests/), simply:
 ### Usage
 The python sample code is [Here](Python/FaceDetection.py).  
 
-* Give your API Key from [my.HiBrainy.com](https://my.HiBrainy.com) in the Dashboard page. and assign `api_key` variable.  
+* Give your API Key from [rapidapi](https://rapidapi.com/HiBrainy/api/face-recognition4) and assign 'api_key' variable. 
 
   ```python
   api_key = 'Your API Key'
@@ -134,4 +134,4 @@ Install-Package Newtonsoft.Json
 		Console.WriteLine("\nRotate Angle: " + detectionResult.Faces[i].rotateAngel);
 	}
     ```
-	Give your API Key from [my.HiBrainy.com](https://my.HiBrainy.com) in the Dashboard page. and assign `apiKey` variable.
+	Give your API Key from [rapidapi](https://rapidapi.com/HiBrainy/api/face-recognition4) and assign apiKey variable.

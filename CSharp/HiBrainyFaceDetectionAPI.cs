@@ -11,11 +11,12 @@
 	{
 		var content = new MultipartFormDataContent();
 		var response = new HttpResponseMessage();
-		string apiUrl = "http://api.hibrainy.com/api/v1/Face/FaceAllFeatures";
-		FaceFeaturesResponseResult faces = new FaceFeaturesResponseResult();
+		string apiUrl = "https://face-recognition4.p.rapidapi.com/FaceDetection";
+		FaceFeaturesResponseResult Faces = new FaceFeaturesResponseResult();
 		try
 		{
-			content.Headers.Add("API-Key", apiKey);
+			content.Headers.Add("x-rapidapi-host", "face-recognition4.p.rapidapi.com");
+			content.Headers.Add("x-rapidapi-key", apiKey);
 			content.Add(new ByteArrayContent(File.ReadAllBytes(FileName)), "Photo", FileName.Split('\\').LastOrDefault());
 		}
 		catch (Exception ex) { throw new Exception(ex.Message); }
@@ -28,8 +29,8 @@
 			string resMessage = await response.Content.ReadAsStringAsync();
 			if (response.IsSuccessStatusCode)
 			{
-				faces = JsonConvert.DeserializeObject<FaceFeaturesResponseResult>(resMessage);
-				return faces;
+				Faces = JsonConvert.DeserializeObject<FaceFeaturesResponseResult>(resMessage);
+				return Faces;
 			}
 			else
 			{ throw new Exception(resMessage); }
