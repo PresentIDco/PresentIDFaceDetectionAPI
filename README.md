@@ -99,6 +99,10 @@ Install-Package Newtonsoft.Json
   * Create "HiBrainyFaceDetectionAPI" class Instance. You can get all the features through below:
     
     ```c#
+    string apiKey = "Your API Key";
+    HiBrainyFaceDetectionAPI faceDetection = new HiBrainyFaceDetectionAPI(apiKey);
+    var detectionResult = faceDetection.FaceDetectionAsync("Path to image").Result;
+    
     Console.WriteLine("Has error: " + detectionResult.hasError);
     Console.WriteLine("Status Code: " + detectionResult.statusCode);
     Console.WriteLine("Status Message: " + detectionResult.statusMessage);
