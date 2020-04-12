@@ -43,4 +43,4 @@ for i in range(0, len(response.json()['Faces'])):
     print('\nImage Blureness Level:', response.json()['Faces'][i]['blur']['level'])
     print('Image Blureness Value:', response.json()['Faces'][i]['blur']['value'])
 
-    print('\nRotate Angle:', response.json()['Faces'][i]['rotateAngel'] + '\n')
+    print('\nRotate Angle:', response.json()['Faces'][i]['rotateAngel'], '\n')
