@@ -1,9 +1,9 @@
-﻿public class FaceFeaturesResponseResult
+public class FaceFeaturesResponseResult
 {
     public bool hasError { set; get; }
-    public int StatusCode { set; get; }
-    public string StatusMessage { set; get; }
-    public List<FaceDetectionResult> Faces { set; get; }
+    public int statusCode { set; get; }
+    public string statusMessage { set; get; }
+    public List<FaceDetectionResult> data { set; get; }
 }
 
 public class FaceDetectionResult
