@@ -4,35 +4,35 @@ The Face Detection Web Service is called Restful and in the post method. The par
 ## Output Template
 ```
 {
-	'hasError': False, 
-	'StatusCode': 200, 
-	'StatusMessage': 'OK', 
-	'Faces': 
-	[
-		{
-			'faceID': '57398ff2-a584-4ddc-b980-3622230fb582', 
-			'status': 200, 
-			'statusMessage': 'OK', 
-			'rectangle': 
-				{
-					'lb': {'x': 366, 'y': 252}, 
-					'lt': {'x': 369, 'y': 97}, 
-					'rb': {'x': 211, 'y': 249}, 
-					'rt': {'x': 214, 'y': 94}
-				}, 
-			'age': {'minAge': 28, 'maxAge': 33}, 
-			'gender': {'index': 1, 'title': 'Male'}, 
-			'faceLandMarks': 
-				[
-					{'title': 'CenterRightEye', 'x': int, 'y': int}, 
-					{'title': 'CenterLeftEye', 'x': int, 'y': int}, 
-					{'title': 'NoseTip', 'x': int, 'y': int}, 
-					{'title': 'LipsRightCorner', 'x': int, 'y': int}, 
-					{'title': 'LipsLeftCorner', 'x': int, 'y': int}
-				], 
-			'blur': {'level': string, 'value': float}, 
-			'rotateAngel': int
-		}
+  'hasError': bool, 
+  'StatusCode': int,
+  'StatusMessage': string, 
+  'Faces': 
+    [
+	  {
+		'faceID': string, 
+		'status': int, 
+		'statusMessage': string, 
+		'rectangle': 
+		  {
+			'lb': {'x': int, 'y': int}, 
+			'lt': {'x': int, 'y': int}, 
+			'rb': {'x': int, 'y': int}, 
+			'rt': {'x': int, 'y': int}
+		  }, 
+		'age': {'minAge': int, 'maxAge': int}, 
+		'gender': {'index': int, 'title': string}, 
+		'faceLandMarks': 
+		  [
+		    {'title': 'CenterRightEye', 'x': int, 'y': int}, 
+			{'title': 'CenterLeftEye', 'x': int, 'y': int}, 
+			{'title': 'NoseTip', 'x': int, 'y': int}, 
+			{'title': 'LipsRightCorner', 'x': int, 'y': int}, 
+			{'title': 'LipsLeftCorner', 'x': int, 'y': int}
+		  ], 
+		'blur': {'level': string, 'value': float}, 
+		'rotateAngel': int
+	  }
 	]
 }
 ```
