@@ -99,39 +99,39 @@ Install-Package Newtonsoft.Json
   * Create "HiBrainyFaceDetectionAPI" class Instance. You can get all the features through below:
     
     ```c#
-    string apiKey = "Your API Key";
-    HiBrainyFaceDetectionAPI faceDetection = new HiBrainyFaceDetectionAPI(apiKey);
-    var detectionResult = faceDetection.FaceDetectionAsync("Path to image").Result;
-    
-    Console.WriteLine("Has error: " + detectionResult.hasError);
-    Console.WriteLine("Status Code: " + detectionResult.statusCode);
-    Console.WriteLine("Status Message: " + detectionResult.statusMessage);
+	string apiKey = "Your API Key";
+	HiBrainyFaceDetectionAPI faceDetection = new HiBrainyFaceDetectionAPI(apiKey);
+	var detectionResult = faceDetection.FaceDetectionAsync("Path to image").Result;
 
-    for (int i = 0; i < detectionResult.data.Count; i++)
-    {
-	Console.WriteLine("\nFace " + i + 1 + " Information:");
-	Console.WriteLine("Face ID: " + detectionResult.data[i].faceID);
-	Console.WriteLine("Status: " + detectionResult.data[i].status);
+	Console.WriteLine("Has error: " + detectionResult.hasError);
+	Console.WriteLine("Status Code: " + detectionResult.statusCode);
 	Console.WriteLine("Status Message: " + detectionResult.statusMessage);
 
-	Console.WriteLine("\nRectangle");
-	Console.WriteLine("LeftBottom " + " X:" + detectionResult.data[i].rectangle.lb.x + " Y:" + detectionResult.data[i].rectangle.lb.y);
-	Console.WriteLine("LeftRight " + " X:" + detectionResult.data[i].rectangle.lt.x + " Y:" + detectionResult.data[i].rectangle.lt.y);
-	Console.WriteLine("RightTop " + " X:" + detectionResult.data[i].rectangle.rt.x + " Y:" + detectionResult.data[i].rectangle.rt.y);
-	Console.WriteLine("RightBottom " + " X:" + detectionResult.data[i].rectangle.rb.x + " Y:" + detectionResult.data[i].rectangle.rb.y);
-
-	Console.WriteLine("\nAge: " + detectionResult.data[i].age.minAge + "~" + detectionResult.data[i].age.maxAge);
-	Console.WriteLine("Gender: " + detectionResult.data[i].gender.title);
-
-	Console.WriteLine("\nFaceLandMarks:");
-	foreach (FaceLanMark item in detectionResult.data[i].faceLandMarks)
+	for (int i = 0; i<detectionResult.data.Count; i++)
 	{
-	    Console.WriteLine(item.title + " X:" + item.x + " Y:" + item.y);
-	}
+	    Console.WriteLine("\nFace " + i + 1 + " Information:");
+	    Console.WriteLine("Face ID: " + detectionResult.data[i].faceID);
+	    Console.WriteLine("Status: " + detectionResult.data[i].status);
+	    Console.WriteLine("Status Message: " + detectionResult.statusMessage);
 
-	Console.WriteLine("\nImage Blureness Level: " + detectionResult.data[i].blur.level);
-	Console.WriteLine("Image Blureness Value: " + detectionResult.data[i].blur.value);
-	Console.WriteLine("\nRotate Angle: " + detectionResult.data[i].rotateAngel);
-    }
+	    Console.WriteLine("\nRectangle");
+	    Console.WriteLine("LeftBottom " + " X:" + detectionResult.data[i].rectangle.lb.x + " Y:" + detectionResult.data[i].rectangle.lb.y);
+	    Console.WriteLine("LeftRight " + " X:" + detectionResult.data[i].rectangle.lt.x + " Y:" + detectionResult.data[i].rectangle.lt.y);
+	    Console.WriteLine("RightTop " + " X:" + detectionResult.data[i].rectangle.rt.x + " Y:" + detectionResult.data[i].rectangle.rt.y);
+	    Console.WriteLine("RightBottom " + " X:" + detectionResult.data[i].rectangle.rb.x + " Y:" + detectionResult.data[i].rectangle.rb.y);
+
+	    Console.WriteLine("\nAge: " + detectionResult.data[i].age.minAge + "~" + detectionResult.data[i].age.maxAge);
+	    Console.WriteLine("Gender: " + detectionResult.data[i].gender.title);
+
+	    Console.WriteLine("\nFaceLandMarks:");
+	    foreach (FaceLanMark item in detectionResult.data[i].faceLandMarks)
+	    {
+		Console.WriteLine(item.title + " X:" + item.x + " Y:" + item.y);
+	    }
+
+	    Console.WriteLine("\nImage Blureness Level: " + detectionResult.data[i].blur.level);
+	    Console.WriteLine("Image Blureness Value: " + detectionResult.data[i].blur.value);
+	    Console.WriteLine("\nRotate Angle: " + detectionResult.data[i].rotateAngel);
+	}
     ```
 	Give your API Key from [rapidapi](https://rapidapi.com/HiBrainy/api/face-recognition4) and assign apiKey variable.
