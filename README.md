@@ -40,6 +40,7 @@ The Face Detection Web Service is called Restful and in the post method. The par
 ## Languages
   * [Python](#python)
   * [C#](#csharp)
+  * [Java](#java)
 
 ## Python
 
