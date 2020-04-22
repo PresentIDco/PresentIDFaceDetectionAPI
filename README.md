@@ -55,7 +55,7 @@ To install [requests](https://pypi.org/project/requests/), simply:
 ### Usage
 The python sample code is [Here](Python/FaceDetection.py).  
 
-* Give your API Key from [rapidapi](https://rapidapi.com/HiBrainy/api/face-recognition4) and assign 'api_key' variable. 
+* Give your API Key from [my.HiBrainy.com](https://my.HiBrainy.com) in the Dashboard page. and assign `api_key` variable. 
 
   ```python
   api_key = 'Your API Key'
@@ -134,7 +134,7 @@ Install-Package Newtonsoft.Json
 		Console.WriteLine("\nRotate Angle: " + detectionResult.Faces[i].rotateAngel);
 	}
     ```
-	Give your API Key from [rapidapi](https://rapidapi.com/HiBrainy/api/face-recognition4) and assign apiKey variable.
+	Give your API Key from [my.HiBrainy.com](https://my.HiBrainy.com) in the Dashboard page. and assign `apiKey` variable.
 
 
 ## Java
@@ -144,8 +144,8 @@ Install-Package Newtonsoft.Json
 
 
 ### Usage
- * Add `hbFaceDetectionResult` class in your project.  
-   [Here](Java/hbFaceDetectionResult.java) is the content of the `hbFaceDetectionResult.java` class. 
+ * Add `FaceFeaturesResponseResult` class in your project.  
+   [Here](Java/FaceFeaturesResponseResult.java) is the content of the `FaceFeaturesResponseResult.java` class. 
 
  * Add following "using" statements to your project.  
    ```java
@@ -156,16 +156,16 @@ Install-Package Newtonsoft.Json
  * You can get all the features through below:
 
     ```java
-    String API_ENDPOINT = "http://api.hibrainy.com/api/v1/Face/FaceAllFeatures";
-    String API_KEY = "Your API Key";
-    String IMAGE_PATH = "Path to image file";
-    String IMAGE_NAME = "Image name"; 
-    File file = new File(IMAGE_PATH + IMAGE_NAME);
+    String apiURL = "http://api.hibrainy.com/api/v1/Face/FaceAllFeatures";
+    String apiKey = "Your API Key";
+    String imagePath = "Path to image file";
+    String imageName = "Image name"; 
+    File file = new File(imagePath + imageName);
     byte[] fileContent = new byte[(int) file.length()];
 
     OkHttpClient client = new OkHttpClient();
     Request request = new Request.Builder()
-                .url(API_ENDPOINT)
+                .url(apiURL)
                 .post(RequestBody.create(MediaType.get("multipart/form-data"), fileContent))
                 .header("API-Key", apiKey)
                 .build();
@@ -175,40 +175,40 @@ Install-Package Newtonsoft.Json
     ObjectMapper mapper = new ObjectMapper();
         
     FaceFeaturesResponseResult faceDetection = mapper.readValue(response.body().string(), FaceFeaturesResponseResult.class);
-	System.out.println("Has Error: " + faceDetection.gethasError());
-	System.out.println("Status Code: " + faceDetection.getStatusCode());
-	System.out.println("Status Message: " + faceDetection.getStatusMessage());          
-	System.out.println("FaceID:" + faceDetection.getFaceID());
-	System.out.println("Status:" + faceDetection.getStatus());
-	System.out.println("StatusMessage:" + faceDetection.getstatusMessage());
-	
-	System.out.println("Rectangle:");
-	int [] lb = faceDetection.getlb();
-	int [] lt = faceDetection.getlt();
-	int [] rb = faceDetection.getrb();
-	int [] rt = faceDetection.getrt();
-	System.out.print("Left Bottom: "+Integer.toString(lb[0])+','+Integer.toString(lb[1]));
-	System.out.print("Left Top: "+Integer.toString(lt[0])+','+Integer.toString(lt[1]));
-	System.out.print("Right Bottom: "+Integer.toString(rb[0])+','+Integer.toString(rb[1]));
-	System.out.print("Right Top: "+Integer.toString(rt[0])+','+Integer.toString(rt[1]));
-	
-	System.out.print("Age:\n" +Integer.toString(faceDetection.getminAge())+
+    System.out.println("Has Error: " + faceDetection.gethasError());
+    System.out.println("Status Code: " + faceDetection.getStatusCode());
+    System.out.println("Status Message: " + faceDetection.getStatusMessage());          
+    System.out.println("FaceID:" + faceDetection.getFaceID());
+    System.out.println("Status:" + faceDetection.getStatus());
+    System.out.println("StatusMessage:" + faceDetection.getstatusMessage());
+
+    System.out.println("Rectangle:");
+    int [] lb = faceDetection.getlb();
+    int [] lt = faceDetection.getlt();
+    int [] rb = faceDetection.getrb();
+    int [] rt = faceDetection.getrt();
+    System.out.print("Left Bottom: "+Integer.toString(lb[0])+','+Integer.toString(lb[1]));
+    System.out.print("Left Top: "+Integer.toString(lt[0])+','+Integer.toString(lt[1]));
+    System.out.print("Right Bottom: "+Integer.toString(rb[0])+','+Integer.toString(rb[1]));
+    System.out.print("Right Top: "+Integer.toString(rt[0])+','+Integer.toString(rt[1]));
+
+    System.out.print("Age:\n" +Integer.toString(faceDetection.getminAge())+
 			" ~ "+Integer.toString(faceDetection.getmaxAge()));
-	System.out.println("Gender:" + faceDetection.gettitle());
-	
-	System.out.println("\nFaceLandMark:");
-	int [] cr = faceDetection.getCenterRightEye();
-	int [] cl = faceDetection.getCenterLeftEye();
-	int [] np = faceDetection.getNoseTip();
-	int [] lr = faceDetection.getLipsRightCorner();
-	int [] ll = faceDetection.getLipsLeftCorner();
-	System.out.print("CenterRightEye: "+Integer.toString(cr[0])+','+Integer.toString(cr[1])+"\n");
-	System.out.print("CenterLeftEye: "+Integer.toString(cl[0])+','+Integer.toString(cl[1])+"\n");
-	System.out.print("NoseTip: "+Integer.toString(np[0])+','+Integer.toString(np[1])+"\n");
-	System.out.print("LipsRightCorner: "+Integer.toString(lr[0])+','+Integer.toString(lr[1])+"\n");
-	System.out.print("LipsLeftCorner: "+Integer.toString(ll[0])+','+Integer.toString(ll[1])+"\n");
-	System.out.print("Image Blureness Level: "+ faceDetection.getblur()+"\tImage Blureness Value: "+Float.toString(faceDetection.getvalue()));
+    System.out.println("Gender:" + faceDetection.gettitle());
+
+    System.out.println("\nFaceLandMark:");
+    int [] cr = faceDetection.getCenterRightEye();
+    int [] cl = faceDetection.getCenterLeftEye();
+    int [] np = faceDetection.getNoseTip();
+    int [] lr = faceDetection.getLipsRightCorner();
+    int [] ll = faceDetection.getLipsLeftCorner();
+    System.out.print("CenterRightEye: "+Integer.toString(cr[0])+','+Integer.toString(cr[1])+"\n");
+    System.out.print("CenterLeftEye: "+Integer.toString(cl[0])+','+Integer.toString(cl[1])+"\n");
+    System.out.print("NoseTip: "+Integer.toString(np[0])+','+Integer.toString(np[1])+"\n");
+    System.out.print("LipsRightCorner: "+Integer.toString(lr[0])+','+Integer.toString(lr[1])+"\n");
+    System.out.print("LipsLeftCorner: "+Integer.toString(ll[0])+','+Integer.toString(ll[1])+"\n");
+    System.out.print("Image Blureness Level: "+ faceDetection.getblur()+"\tImage Blureness Value: "+Float.toString(faceDetection.getvalue()));
     ```
 
-    Give your API Key from [my.HiBrainy.com](https://my.HiBrainy.com) in the Dashboard page. and assign `API_KEY` variable.
+    Give your API Key from [my.HiBrainy.com](https://my.HiBrainy.com) in the Dashboard page. and assign `apiKey` variable.
   
