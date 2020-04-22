@@ -148,7 +148,7 @@ Install-Package Newtonsoft.Json
  * Add `FaceFeaturesResponseResult` class in your project.  
    [Here](Java/FaceFeaturesResponseResult.java) is the content of the `FaceFeaturesResponseResult.java` class. 
 
- * Add following "using" statements to your project.  
+ * Add following "import" statements to your project.  
    ```java
     import com.fasterxml.jackson.databind.ObjectMapper;
     import okhttp3.*;
