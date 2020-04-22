@@ -104,34 +104,34 @@ Install-Package Newtonsoft.Json
 	var detectionResult = faceDetection.FaceDetectionAsync("Path to image").Result;
 
 	Console.WriteLine("Has error: " + detectionResult.hasError);
-	Console.WriteLine("Status Code: " + detectionResult.StatusCode);
-	Console.WriteLine("Status Message: " + detectionResult.StatusMessage);
+	Console.WriteLine("Status Code: " + detectionResult.statusCode);
+	Console.WriteLine("Status Message: " + detectionResult.statusMessage);
 
-	for (int i = 0; i < detectionResult.Faces.Count; i++)
+	for (int i = 0; i<detectionResult.data.Count; i++)
 	{
-		Console.WriteLine("\nFace " + i + 1 + " Information:");
-		Console.WriteLine("Face ID: " + detectionResult.Faces[i].faceID);
-		Console.WriteLine("Status: " + detectionResult.Faces[i].status);
-		Console.WriteLine("Status Message: " + detectionResult.StatusMessage);
+	    Console.WriteLine("\nFace " + i + 1 + " Information:");
+	    Console.WriteLine("Face ID: " + detectionResult.data[i].faceID);
+	    Console.WriteLine("Status: " + detectionResult.data[i].status);
+	    Console.WriteLine("Status Message: " + detectionResult.statusMessage);
 
-		Console.WriteLine("\nRectangle");
-		Console.WriteLine("LeftBottom " + " X:" + detectionResult.Faces[i].rectangle.lb.x + " Y:" + detectionResult.Faces[i].rectangle.lb.y);
-		Console.WriteLine("LeftRight " + " X:" + detectionResult.Faces[i].rectangle.lt.x + " Y:" + detectionResult.Faces[i].rectangle.lt.y);
-		Console.WriteLine("RightTop " + " X:" + detectionResult.Faces[i].rectangle.rt.x + " Y:" + detectionResult.Faces[i].rectangle.rt.y);
-		Console.WriteLine("RightBottom " + " X:" + detectionResult.Faces[i].rectangle.rb.x + " Y:" + detectionResult.Faces[i].rectangle.rb.y);
+	    Console.WriteLine("\nRectangle");
+	    Console.WriteLine("LeftBottom " + " X:" + detectionResult.data[i].rectangle.lb.x + " Y:" + detectionResult.data[i].rectangle.lb.y);
+	    Console.WriteLine("LeftRight " + " X:" + detectionResult.data[i].rectangle.lt.x + " Y:" + detectionResult.data[i].rectangle.lt.y);
+	    Console.WriteLine("RightTop " + " X:" + detectionResult.data[i].rectangle.rt.x + " Y:" + detectionResult.data[i].rectangle.rt.y);
+	    Console.WriteLine("RightBottom " + " X:" + detectionResult.data[i].rectangle.rb.x + " Y:" + detectionResult.data[i].rectangle.rb.y);
 
-		Console.WriteLine("\nAge: " + detectionResult.Faces[i].age.minAge + "~" + detectionResult.Faces[i].age.maxAge);
-		Console.WriteLine("Gender: " + detectionResult.Faces[i].gender.title);
+	    Console.WriteLine("\nAge: " + detectionResult.data[i].age.minAge + "~" + detectionResult.data[i].age.maxAge);
+	    Console.WriteLine("Gender: " + detectionResult.data[i].gender.title);
 
-		Console.WriteLine("\nFaceLandMarks:");
-		foreach (FaceLanMark item in detectionResult.Faces[i].faceLandMarks)
-		{
-			Console.WriteLine(item.title + " X:" + item.x + " Y:" + item.y);
-		}
-		
-		Console.WriteLine("\nImage Blureness Level: " + detectionResult.Faces[i].blur.level);
-		Console.WriteLine("Image Blureness Value: " + detectionResult.Faces[i].blur.value);
-		Console.WriteLine("\nRotate Angle: " + detectionResult.Faces[i].rotateAngel);
+	    Console.WriteLine("\nFaceLandMarks:");
+	    foreach (FaceLanMark item in detectionResult.data[i].faceLandMarks)
+	    {
+		Console.WriteLine(item.title + " X:" + item.x + " Y:" + item.y);
+	    }
+
+	    Console.WriteLine("\nImage Blureness Level: " + detectionResult.data[i].blur.level);
+	    Console.WriteLine("Image Blureness Value: " + detectionResult.data[i].blur.value);
+	    Console.WriteLine("\nRotate Angle: " + detectionResult.data[i].rotateAngel);
 	}
     ```
 	Give your API Key from [rapidapi](https://rapidapi.com/HiBrainy/api/face-recognition4) and assign `apiKey` variable.
