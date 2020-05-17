@@ -1,4 +1,4 @@
-# HiBrainyAPIs - Face Detection
+# HiBrainy - RapidAPI Face Detection API Documentation
 The Face Detection Web Service is called Restful and in the post method. The parameters and input files are sent to the API in the form of Multi-part Form. The service output is returned in Json format.
 
 ## Output Template
