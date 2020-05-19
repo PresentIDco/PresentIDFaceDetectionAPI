@@ -2,7 +2,7 @@ import requests
 
 
 api_url = 'http://api.hibrainy.com/api/v1/Face/FaceAllFeatures'
-api_key = 'Your API Key'
+api_key = 'Your API-Key'
 
 image_path = 'Image directory path'
 image_name = 'Image name'
