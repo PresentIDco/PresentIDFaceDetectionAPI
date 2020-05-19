@@ -1,5 +1,5 @@
 # HiBrainy - Face Detection API Documentation
-The Face Detection Web Service is called Restful and in the post method. The parameters and input files are sent to the API in the form of Multi-part Form. The service output is returned in Json format.
+The HiBrainy Face Detection API is organized around RESTful and is called through post method. The parameters and input files are sent to the API in the form of Multipart Form. The service output is returned in JSON format.
 
 ## Output Template
 ```
@@ -45,21 +45,22 @@ The Face Detection Web Service is called Restful and in the post method. The par
 ## Python
 
 ### Prerequisites
-  [requests](https://pypi.org/project/requests/) python package
-
-#### Installation
-To install [requests](https://pypi.org/project/requests/), simply:
- ```
- $ pip install requests
- ```
+ - Face Recognition API-Key
+    - You can get a free trial API-Key by creating your free account from [HiBrainy.com](https://my.hibrainy.com/home/signup). Login to your account, click on Tokens and get your Face Recognition API-Key.
+    
+ - [Requests](https://pypi.org/project/requests/) python package
+    - To install [requests](https://pypi.org/project/requests/), simply:
+   ```
+   $ pip install requests
+   ```
 
 ### Usage
 The python sample code is [Here](Python/FaceDetection.py).  
 
-* Give your API Key from [my.HiBrainy.com](https://my.HiBrainy.com) in the Dashboard page. and assign `api_key` variable. 
+* Assign the variable `api_key` by API-Key you took from [your account](https://my.hibrainy.com).
 
   ```python
-  api_key = 'Your API Key'
+  api_key = 'Your API-Key'
   ```
 * Assign the variables `image_path` and `image_name`, by image path and image name.  
   ```python
@@ -68,14 +69,16 @@ The python sample code is [Here](Python/FaceDetection.py).
   ```
 
 ## CSharp  
-### Prerequisites
- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) framework for .NET    
 
-#### Installation
-Run this command in the Package Manager Console:  
-``` 
-Install-Package Newtonsoft.Json
-```
+### Prerequisites
+ - Face Recognition API-Key
+    - You can get a free trial API-Key by creating your free account from [HiBrainy.com](https://my.hibrainy.com/home/signup). Login to your account, click on Tokens and get your Face Recognition API-Key.
+    
+ - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) framework for .NET 
+    - Run this command in the Package Manager Console:  
+      ``` 
+      Install-Package Newtonsoft.Json
+      ```
 
 ### Usage
  * Add `FaceFeaturesResponseResult.cs` class in your project, with following "using" statements.  
@@ -100,7 +103,7 @@ Install-Package Newtonsoft.Json
   * Create "HiBrainyFaceDetectionAPI" class Instance. You can get all the features through below:
     
     ```c#
-	string apiKey = "Your API Key";
+	string apiKey = "Your API-Key";
 	HiBrainyFaceDetectionAPI faceDetection = new HiBrainyFaceDetectionAPI(apiKey);
 	var detectionResult = faceDetection.FaceDetectionAsync("Path to image").Result;
 
@@ -135,14 +138,16 @@ Install-Package Newtonsoft.Json
 		Console.WriteLine("\nRotate Angle: " + detectionResult.Faces[i].rotateAngel);
 	}
     ```
-	Give your API Key from [my.HiBrainy.com](https://my.HiBrainy.com) in the Dashboard page. and assign `apiKey` variable.
+  	Assign the variable `apiKey` by API-Key you took from [your account](https://my.hibrainy.com).
 
 
 ## Java
 
 ### Prerequisites
- [OkHttp package](https://github.com/square/okhttp/) package  
-
+ - Face Recognition API-Key
+    - You can get a free trial API-Key by creating your free account from [HiBrainy.com](https://my.hibrainy.com/home/signup). Login to your account, click on Tokens and get your Face Recognition API-Key.
+    
+ - [OkHttp package](https://github.com/square/okhttp/) package  
 
 ### Usage
  * Add `FaceFeaturesResponseResult` class in your project.  
@@ -159,7 +164,7 @@ Install-Package Newtonsoft.Json
 
     ```java
     String apiURL = "http://api.hibrainy.com/api/v1/Face/FaceAllFeatures";
-    String apiKey = "Your API Key";
+    String apiKey = "Your API-Key";
     String imagePath = "Path to image file";
     String imageName = "Image name"; 
     File file = new File(imagePath + imageName);
@@ -212,5 +217,4 @@ Install-Package Newtonsoft.Json
     System.out.print("Image Blureness Level: "+ faceDetection.getblur()+"\tImage Blureness Value: "+Float.toString(faceDetection.getvalue()));
     ```
 
-    Give your API Key from [my.HiBrainy.com](https://my.HiBrainy.com) in the Dashboard page. and assign `apiKey` variable.
-  
+      Assign the variable `apiKey` by API-Key you took from [your account](https://my.hibrainy.com).
