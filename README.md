@@ -63,7 +63,7 @@ The python sample code is [Here](Python/FaceDetection.py).
 
 Assign the variable `api_key` by API-Key you took from [your RapidAPI account](https://rapidapi.com/HiBrainy/api/face-recognition4/endpoints).
   ```python
-  api_key = 'Your API Key'
+  api_key = 'Your API-Key'
   ```
 * Assign the variables `image_path` and `image_name`, by image path and image name.  
   ```python
