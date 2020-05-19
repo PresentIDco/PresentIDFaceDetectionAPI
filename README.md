@@ -45,20 +45,23 @@ The Face Detection Web Service is called Restful and in the post method. The par
 
 ## Python
 
-### Prerequisites
-  [requests](https://pypi.org/project/requests/) python package
 
-#### Installation
-To install [requests](https://pypi.org/project/requests/), simply:
- ```
- $ pip install requests
- ```
+### Prerequisites
+
+ - Face Recognition API-Key
+    - You can get RapidAPI API-Key by subscribing HiBrainy Face Recognition from [RapidAPI.com](https://rapidapi.com/HiBrainy/api/face-recognition4/endpoints).
+    
+ - [Requests](https://pypi.org/project/requests/) python package
+    - To install [requests](https://pypi.org/project/requests/), simply:
+   ```
+   $ pip install requests
+   ```
+   
 
 ### Usage
 The python sample code is [Here](Python/FaceDetection.py).  
 
-* Give your API Key from [rapidapi](https://rapidapi.com/HiBrainy/api/face-recognition4) and assign 'api_key' variable. 
-
+Assign the variable `api_key` by API-Key you took from [your RapidAPI account](https://rapidapi.com/HiBrainy/api/face-recognition4/endpoints).
   ```python
   api_key = 'Your API Key'
   ```
@@ -69,15 +72,17 @@ The python sample code is [Here](Python/FaceDetection.py).
   ```
 
 ## CSharp  
+
 ### Prerequisites
- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) framework for .NET    
-
-#### Installation
-Run this command in the Package Manager Console:  
-``` 
-Install-Package Newtonsoft.Json
-```
-
+ - Face Recognition API-Key
+    - You can get RapidAPI API-Key by subscribing HiBrainy Face Recognition from [RapidAPI.com](https://rapidapi.com/HiBrainy/api/face-recognition4/endpoints).
+	
+ - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) framework for .NET 
+    - Run this command in the Package Manager Console:  
+      ``` 
+      Install-Package Newtonsoft.Json
+      ```
+      
 ### Usage
  * Add `FaceFeaturesResponseResult.cs` class in your project, with following "using" statements.  
    ```c#
@@ -96,12 +101,13 @@ Install-Package Newtonsoft.Json
    using System.Net.Http;
    using System.Threading.Tasks;
    ```
+   
    [Here](CSharp/HiBrainyFaceDetectionAPI.cs) is the content of the `HiBrainyFaceDetectionAPI.cs` class.
   
   * Create "HiBrainyFaceDetectionAPI" class Instance. You can get all the features through below:
     
     ```c#
-	string apiKey = "Your API Key";
+	string apiKey = "Your API-Key";
 	HiBrainyFaceDetectionAPI faceDetection = new HiBrainyFaceDetectionAPI(apiKey);
 	var detectionResult = faceDetection.FaceDetectionAsync("Path to image").Result;
 
@@ -136,13 +142,16 @@ Install-Package Newtonsoft.Json
 	    Console.WriteLine("\nRotate Angle: " + detectionResult.data[i].rotateAngel);
 	}
     ```
-	Give your API Key from [rapidapi](https://rapidapi.com/HiBrainy/api/face-recognition4) and assign `apiKey` variable.
+	Assign the variable `apiKey` by API-Key you took from [your RapidAPI account](https://rapidapi.com/HiBrainy/api/face-recognition4/endpoints).
 
 
 ## Java
 
 ### Prerequisites
- [OkHttp package](https://github.com/square/okhttp/) package  
+ - Face Recognition API-Key
+    - You can get RapidAPI API-Key by subscribing HiBrainy Face Recognition from [RapidAPI.com](https://rapidapi.com/HiBrainy/api/face-recognition4/endpoints).
+    
+ - [OkHttp package](https://github.com/square/okhttp/) package  
 
 
 ### Usage
@@ -160,7 +169,7 @@ Install-Package Newtonsoft.Json
  
     ```java
     String apiURL = "https://face-recognition4.p.rapidapi.com/FaceDetection";
-    String apiKey = "Your API Key";
+    String apiKey = "Your API-Key";
 	
 	OkHttpClient client = new OkHttpClient();
 	Request request = new Request.Builder()
@@ -209,5 +218,5 @@ Install-Package Newtonsoft.Json
 	System.out.print("LipsLeftCorner: "+Integer.toString(ll[0])+','+Integer.toString(ll[1])+"\n");
 	System.out.print("Image Blureness Level: "+ faceDetection.getblur()+"\tImage Blureness Value: "+Float.toString(faceDetection.getvalue()));
 	```
-	Give your API Key from [rapidapi](https://rapidapi.com/HiBrainy/api/face-recognition4) and assign `apiKey` variable.
+	Assign the variable `apiKey` by API-Key you took from [your RapidAPI account](https://rapidapi.com/HiBrainy/api/face-recognition4/endpoints).
 
