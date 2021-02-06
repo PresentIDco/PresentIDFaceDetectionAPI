@@ -1,8 +1,8 @@
-﻿public class HiBrainyFaceDetectionAPI
+﻿public class PresentIDFaceDetectionAPI
 {
 	string apiKey;
 
-	public HiBrainyFaceDetectionAPI(string apiKey)
+	public PresentIDFaceDetectionAPI(string apiKey)
 	{
 		this.apiKey = apiKey;
 	}
