@@ -46,7 +46,7 @@ The PresentID Face Detection API is organized around RESTful and is called throu
 
 ### Prerequisites
  - Face Recognition API-Key
-    - You can get a free trial API-Key by creating your free account from [PresentID.com](https://rapidapi.com/user/presentID). Login to your account, click on Tokens and get your Face Recognition API-Key.
+    - You can get a free trial API-Key by creating your free account from [https://rapidapi.com/user/presentID](https://rapidapi.com/user/presentID). Login to your account, click on Tokens and get your Face Recognition API-Key.
     
  - [Requests](https://pypi.org/project/requests/) python package
     - To install [requests](https://pypi.org/project/requests/), simply:
@@ -72,7 +72,7 @@ The python sample code is [Here](Python/FaceDetection.py).
 
 ### Prerequisites
  - Face Recognition API-Key
-    - You can get a free trial API-Key by creating your free account from [presentid.com](https://rapidapi.com/user/presentID). Login to your account, click on Tokens and get your Face Recognition API-Key.
+    - You can get a free trial API-Key by creating your free account from [https://rapidapi.com/user/presentID](https://rapidapi.com/user/presentID). Login to your account, click on Tokens and get your Face Recognition API-Key.
     
  - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) framework for .NET 
     - Run this command in the Package Manager Console:  
@@ -145,7 +145,7 @@ The python sample code is [Here](Python/FaceDetection.py).
 
 ### Prerequisites
  - Face Recognition API-Key
-    - You can get a free trial API-Key by creating your free account from [presentid.com](https://rapidapi.com/user/presentID). Login to your account, click on Tokens and get your Face Recognition API-Key.
+    - You can get a free trial API-Key by creating your free account from [https://rapidapi.com/user/presentID(https://rapidapi.com/user/presentID). Login to your account, click on Tokens and get your Face Recognition API-Key.
     
  - [OkHttp package](https://github.com/square/okhttp/) package  
 
