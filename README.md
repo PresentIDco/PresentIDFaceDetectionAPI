@@ -17,7 +17,7 @@ PresentID Face detection API can detect the face(s) in your image and retrieve s
 - Blur
 - Rotate Angel
 
-**Ability & Potentials:**
+**Features:**
 - Recall rate at 100 FP on FDDB: 87.3
 - Detect faces and get back the attributes such as rectangle, Gender, age.
 - Detect all small and large faces.
@@ -30,15 +30,14 @@ PresentID Face detection API can detect the face(s) in your image and retrieve s
 - Easy integration with your app.
 
 **Use Cases:**
-- Attendance systems
-- Dating websites
-- Digital banking 
-- Visitor identification
-- Expedited service
-- Access management
-- Public safety
-- Fraud prevention
-- Know your customer
+- Access Control
+- Onboarding
+- Fintech
+- Car sharing & Taxi
+- Online Brokers
+- Health Care
+- Dating Apps
+- Customer Support
 
 **Rules & Restrictions:**
 - Send data via Base64 or an image URL or an image file.
