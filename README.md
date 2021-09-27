@@ -1,7 +1,6 @@
 ## PresentID Face Detection 
 PresentID Face detection API can detect the face(s) in your image and retrieve some features such as Age, Gender, Landmarks, etc.
 
-![face-detection-banner](https://user-images.githubusercontent.com/63470748/119772261-bdd06600-be73-11eb-8278-37c86ebe1e41.jpg)
 
 
 **Input:**
